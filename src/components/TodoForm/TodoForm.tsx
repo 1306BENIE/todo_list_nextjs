@@ -16,10 +16,10 @@ export default function TodoForm({
   onSubmit,
 }: Props) {
   return (
-    <div className="space-y-6 p-6 bg-white rounded-2xl shadow-xl border border-gray-200 max-w-xl mx-auto">
-      <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">
-        Editer une Tâche
-      </h2>
+    <div className="space-y-6 p-6 bg-[#e9f3efac] rounded-2xl shadow-xl border border-gray-200 max-w-xl mx-auto">
+      <h1 className="text-2xl md:text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#176c17dc] via- to-[#332dea] drop-shadow-[3px_3px_0_rgba(0,0,0,0.3)] font-mono tracking-wide">
+        Créer / Editer une tâche
+      </h1>
 
       <div>
         <label className="block text-sm font-medium text-gray-600 mb-1">
@@ -41,7 +41,7 @@ export default function TodoForm({
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value as ITodo["completed"])}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none transition duration-200 text-gray-800 bg-white"
+          className="w-full px-4 py-3 bg-[#e9f3efac] border border-gray-300 rounded-xl focus:ring-1 focus:ring-emerald-500 focus:outline-none transition duration-200 text-gray-800"
         >
           <option value="En cours"> En cours</option>
           <option value="Terminée">Terminée</option>
@@ -50,7 +50,9 @@ export default function TodoForm({
 
       <button
         onClick={onSubmit}
-        className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl shadow-md transition duration-200"
+        className="w-full text-xl bg-[#0dd58c91] hover:bg-[#2BBF7E] text-white font-semibold py-3 rounded-xl shadow-md transition duration-200 
+        active:shadow-none active:translate-x-[2px] active:translate-y-[2px] bg-gradient-to-r from-[#8fdccf] to-[#348bb1]
+        drop-shadow-[3px_3px_0_rgba(0,0,0,0.4)]"
       >
         Enregistrer la tâche
       </button>

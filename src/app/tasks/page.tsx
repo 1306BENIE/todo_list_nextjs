@@ -23,7 +23,10 @@ export default function TasksPage() {
       <div className="flex justify-end mb-4">
         <button
           onClick={() => router.push("/create-tasks")}
-          className="bg-[#8fdccf] hover:bg-[#8fdccf]/50 text-[#348bb1] font-semibold px-4 py-2 rounded-xl transition"
+          className="bg-[#8fdccf] text-[#348bb1] font-bold px-6 py-3 rounded-xl 
+            shadow-[4px_4px_0_#348bb1] hover:shadow-[2px_2px_0_#348bb1] 
+            active:shadow-none active:translate-x-[2px] active:translate-y-[2px]
+            transition-all duration-200 ease-in-out"
         >
           Créer une tâche
         </button>

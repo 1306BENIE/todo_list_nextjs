@@ -14,7 +14,7 @@ export default function CreateTaskPage() {
   const handleAdd = () => {
     if (!title.trim()) return;
 
-    addTodo(title, status); // ← on modifie addTodo pour inclure le status
+    addTodo(title, status);
     router.push("/tasks");
   };
 
