@@ -1,0 +1,48 @@
+import { ITodo } from "@/interfaces/Todo";
+
+const STORAGE_KEY = "todos";
+
+function getStoredTodos(): ITodo[] {
+  if (typeof window === "undefined") return [];
+  const stored = localStorage.getItem(STORAGE_KEY);
+  return stored ? JSON.parse(stored) : [];
+}
+
+function saveTodos(todos: ITodo[]): void {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+}
+
+export function getTodos(): ITodo[] {
+  return getStoredTodos();
+}
+
+export function addTodo(title: string, completed: ITodo["completed"]): ITodo {
+  const todos = getStoredTodos();
+  const newTodo: ITodo = {
+    id: Date.now(),
+    title,
+    completed,
+  };
+  todos.push(newTodo);
+  saveTodos(todos);
+  return newTodo;
+}
+
+export function updateTodo(
+  id: number,
+  newTitle: string,
+  newStatus: ITodo["completed"]
+): void {
+  const todos = getStoredTodos();
+  const updatedTodos = todos.map((todo) =>
+    todo.id === id ? { ...todo, title: newTitle, completed: newStatus } : todo
+  );
+  saveTodos(updatedTodos);
+}
+
+export function deleteTodo(id: number): void {
+  const todos = getStoredTodos();
+  const updatedTodos = todos.filter((todo) => todo.id !== id);
+  saveTodos(updatedTodos);
+}

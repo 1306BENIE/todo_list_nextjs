@@ -1,0 +1,45 @@
+"use client";
+
+import { ITodo } from "@/interfaces/Todo";
+import { useRouter } from "next/navigation";
+import { FaRegEdit } from "react-icons/fa";
+import { RiDeleteBin6Line } from "react-icons/ri";
+
+interface TodoItemProps {
+  todo: ITodo;
+}
+
+export default function TodoItem({ todo }: TodoItemProps) {
+  const router = useRouter();
+
+  return (
+    <tr className="border-t">
+      <td className="p-4">{todo.title}</td>
+      <td className="p-4">
+        <span
+          className={`px-3 py-1 rounded-full text-sm font-medium ${
+            todo.completed === "Terminée"
+              ? "bg-green-100 text-green-800"
+              : "bg-yellow-100 text-yellow-800"
+          }`}
+        >
+          {todo.completed}
+        </span>
+      </td>
+      <td className="p-4 flex gap-2">
+        <button
+          onClick={() => router.push(`/update-tasks?id=${todo.id}`)}
+          className="text-blue-600 cursor-pointer"
+        >
+          <FaRegEdit className="w-[25px] h-[25px]" />
+        </button>
+        <button
+          onClick={() => router.push(`/delete-tasks?id=${todo.id}`)}
+          className="text-red-600  ml-5 cursor-pointer"
+        >
+          <RiDeleteBin6Line className="w-[25px] h-[25px]" />
+        </button>
+      </td>
+    </tr>
+  );
+}
