@@ -1,15 +1,11 @@
 "use client";
 
-import { ITodo } from "@/interfaces/Todo";
+import { ITodoItemProps } from "@/interfaces/Todo";
 import { useRouter } from "next/navigation";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-interface TodoItemProps {
-  todo: ITodo;
-}
-
-export default function TodoItem({ todo }: TodoItemProps) {
+export default function TodoItem({ todo }: ITodoItemProps) {
   const router = useRouter();
 
   return (

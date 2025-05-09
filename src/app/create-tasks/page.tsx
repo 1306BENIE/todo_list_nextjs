@@ -9,7 +9,7 @@ import { ITodo } from "@/interfaces/Todo";
 export default function CreateTaskPage() {
   const router = useRouter();
   const [title, setTitle] = useState("");
-  const [status, setStatus] = useState<ITodo["completed"]>("En cours");
+  const [status, setStatus] = useState<ITodo["completed"]>(false);
 
   const handleAdd = () => {
     if (!title.trim()) return;

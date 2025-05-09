@@ -13,7 +13,7 @@ export default function UpdateTaskPage() {
   const id = idParam ? parseInt(idParam, 10) : null;
 
   const [title, setTitle] = useState("");
-  const [status, setStatus] = useState<ITodo["completed"]>("En cours");
+  const [status, setStatus] = useState<ITodo["completed"]>(false);
 
   useEffect(() => {
     if (!id) return;

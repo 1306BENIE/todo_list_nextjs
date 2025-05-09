@@ -1,11 +1,7 @@
-import { ITodo } from "@/interfaces/Todo";
+import { ITodoListProps } from "@/interfaces/Todo";
 import TodoItem from "../TodoItem/TodoItem";
 
-interface TodoListProps {
-  todos: ITodo[];
-}
-
-export default function TodoList({ todos }: TodoListProps) {
+export default function TodoList({ todos }: ITodoListProps) {
   return (
     <div className="overflow-x-auto shadow-xl rounded-lg">
       <table className="min-w-full bg-white border-separate border-spacing-0 border border-gray-300 rounded-lg">

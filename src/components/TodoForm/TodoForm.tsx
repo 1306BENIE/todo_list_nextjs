@@ -1,12 +1,6 @@
-import { ITodo } from "@/interfaces/Todo";
-
-interface Props {
-  title: string;
-  status: ITodo["completed"];
-  setTitle: (value: string) => void;
-  setStatus: (value: ITodo["completed"]) => void;
-  onSubmit: () => void;
-}
+import { useRouter } from "next/navigation";
+import { Props, ITodo } from "@/interfaces/Todo";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function TodoForm({
   title,
@@ -15,11 +9,18 @@ export default function TodoForm({
   setStatus,
   onSubmit,
 }: Props) {
+  const router = useRouter();
   return (
-    <div className="space-y-6 p-6 bg-[#e9f3efac] rounded-2xl shadow-xl border border-gray-200 max-w-xl mx-auto">
-      <h1 className="text-2xl md:text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#176c17dc] via- to-[#332dea] drop-shadow-[3px_3px_0_rgba(0,0,0,0.3)] font-mono tracking-wide">
-        Créer / Editer une tâche
-      </h1>
+    <div className="space-y-6 p-6 bg-[#e9f3eaac] rounded-2xl shadow-xl border border-gray-200 max-w-xl mx-auto">
+      <div className="flex items-center gap-2 justify-center">
+        <IoMdArrowRoundBack
+          onClick={() => router.push("/tasks")}
+          className="w-[25px] h-[25px] text-[#176c17dc] cursor-pointer"
+        />
+        <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#176c17dc] to-[#332dea] drop-shadow-[3px_3px_0_rgba(0,0,0,0.3)] font-mono tracking-wide">
+          Créer / Editer une tâche
+        </h1>
+      </div>
 
       <div>
         <label className="block text-sm font-medium text-gray-600 mb-1">
