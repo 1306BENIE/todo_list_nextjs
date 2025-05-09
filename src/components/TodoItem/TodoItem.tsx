@@ -10,10 +10,10 @@ export default function TodoItem({ todo }: ITodoItemProps) {
 
   return (
     <tr className="border-t">
-      <td className="p-4">{todo.title}</td>
-      <td className="p-4">
+      <td className="p-3 sm:p-4 text-sm sm:text-base">{todo.title}</td>
+      <td className="p-3 sm:p-4">
         <span
-          className={`px-3 py-1 rounded-full text-sm font-medium ${
+          className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
             todo.completed === "Terminée"
               ? "bg-green-100 text-green-800"
               : "bg-yellow-100 text-yellow-800"
@@ -22,18 +22,18 @@ export default function TodoItem({ todo }: ITodoItemProps) {
           {todo.completed}
         </span>
       </td>
-      <td className="p-4 flex gap-2">
+      <td className="p-3 sm:p-4 flex gap-2">
         <button
           onClick={() => router.push(`/update-tasks?id=${todo.id}`)}
           className="text-blue-600 cursor-pointer"
         >
-          <FaRegEdit className="w-[25px] h-[25px]" />
+          <FaRegEdit className="w-[20px] h-[20px] sm:w-[25px] sm:h-[25px]" />
         </button>
         <button
           onClick={() => router.push(`/delete-tasks?id=${todo.id}`)}
-          className="text-red-600  ml-5 cursor-pointer"
+          className="text-red-600 ml-3 sm:ml-5 cursor-pointer"
         >
-          <RiDeleteBin6Line className="w-[25px] h-[25px]" />
+          <RiDeleteBin6Line className="w-[20px] h-[20px] sm:w-[25px] sm:h-[25px]" />
         </button>
       </td>
     </tr>

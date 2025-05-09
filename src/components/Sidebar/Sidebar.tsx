@@ -15,26 +15,26 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="w-60 bg-gradient-to-b from-[#327bac] to-[#55c7ed] text-white h-screen fixed top-0 left-0 shadow-lg transform transition-transform duration-300 ease-in-out z-50">
-      <div className="p-6">
-        <h2 className="text-3xl font-bold mb-6 text-center  border-white border-b-2">
+    <div className="w-full sm:w-60 bg-gradient-to-b from-[#327bac] to-[#55c7ed] text-white h-auto sm:h-screen fixed sm:fixed top-0 left-0 shadow-lg transform transition-transform duration-300 ease-in-out z-50">
+      <div className="p-4 sm:p-6">
+        <h2 className="text-xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center border-white border-b-2">
           Dashboard
         </h2>
 
-        <ul className="space-y-6">
+        <ul className="flex sm:block justify-around sm:justify-start space-y-0 sm:space-y-6">
           <li
-            className="flex items-center space-x-4 cursor-pointer"
+            className="flex items-center space-x-2 sm:space-x-4 cursor-pointer"
             onClick={handleHomeClick}
           >
-            <FaHome className="text-2xl" />
-            <span>Accueil</span>
+            <FaHome className="text-xl sm:text-2xl" />
+            <span className="text-sm sm:text-base">Accueil</span>
           </li>
           <li
-            className="flex items-center space-x-4 cursor-pointer"
+            className="flex items-center space-x-2 sm:space-x-4 cursor-pointer"
             onClick={handleTasksClick}
           >
-            <FaTasks className="text-2xl" />
-            <span>Tâches</span>
+            <FaTasks className="text-xl sm:text-2xl" />
+            <span className="text-sm sm:text-base">Tâches</span>
           </li>
         </ul>
       </div>

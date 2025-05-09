@@ -1,47 +1,54 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { getTodos, updateTodo } from "@/gateways/todo";
 import { ITodo } from "@/interfaces/Todo";
+import { useSearchParams, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import TodoForm from "@/components/TodoForm/TodoForm";
+import { Suspense } from "react";
 
-export default function UpdateTaskPage() {
-  const router = useRouter();
+function UpdateTaskContent() {
   const searchParams = useSearchParams();
-  const idParam = searchParams.get("id");
-  const id = idParam ? parseInt(idParam, 10) : null;
-
+  const id = searchParams.get("id");
+  const router = useRouter();
   const [title, setTitle] = useState("");
-  const [status, setStatus] = useState<ITodo["completed"]>(false);
+  const [status, setStatus] = useState<ITodo["completed"]>("En cours");
 
   useEffect(() => {
     if (!id) return;
-    const todo = getTodos().find((t) => t.id === id);
+    const todos = JSON.parse(localStorage.getItem("todos") || "[]");
+    const todo = todos.find((t: ITodo) => t.id === Number(id));
     if (todo) {
       setTitle(todo.title);
       setStatus(todo.completed);
-    } else {
-      router.push("/tasks");
     }
-  }, [id, router]);
+  }, [id]);
 
   const handleUpdate = () => {
-    if (!id || !title.trim()) return;
-
-    updateTodo(id, title, status);
+    if (!id) return;
+    const todos = JSON.parse(localStorage.getItem("todos") || "[]");
+    const updatedTodos = todos.map((todo: ITodo) =>
+      todo.id === Number(id) ? { ...todo, title, completed: status } : todo
+    );
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
     router.push("/tasks");
   };
 
   return (
-    <div className="p-8 max-w-xl mx-auto">
-      <TodoForm
-        title={title}
-        status={status}
-        setTitle={setTitle}
-        setStatus={setStatus}
-        onSubmit={handleUpdate}
-      />
-    </div>
+    <TodoForm
+      title={title}
+      completed={status}
+      setTitle={setTitle}
+      setStatus={setStatus}
+      onSubmit={handleUpdate}
+      mode="edit"
+    />
+  );
+}
+
+export default function UpdateTask() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <UpdateTaskContent />
+    </Suspense>
   );
 }

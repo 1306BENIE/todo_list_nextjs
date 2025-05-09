@@ -1,29 +1,26 @@
+type TStatus = "En cours" | "Terminée";
+
 export interface ITodo {
   id: number;
   title: string;
-  completed: boolean;
+  completed: TStatus;
 }
 
 export interface ITodoItemProps {
   todo: ITodo;
-  onToggle: (id: number) => void;
-  onDelete: (id: number) => void;
 }
 
-export interface Props {
+export interface ITodoFormProps {
   title: string;
-  status: ITodo["completed"];
+  completed: ITodo["completed"];
   setTitle: (value: string) => void;
   setStatus: (value: ITodo["completed"]) => void;
   onSubmit: () => void;
+  mode: "create" | "edit";
 }
 
 export interface ITodoListProps {
   todos: ITodo[];
-}
-
-export interface ITodoItemProps {
-  todo: ITodo;
 }
 
 export interface DashboardProps {

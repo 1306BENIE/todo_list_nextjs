@@ -9,7 +9,7 @@ import { ITodo } from "@/interfaces/Todo";
 export default function CreateTaskPage() {
   const router = useRouter();
   const [title, setTitle] = useState("");
-  const [status, setStatus] = useState<ITodo["completed"]>(false);
+  const [status, setStatus] = useState<ITodo["completed"]>("En cours");
 
   const handleAdd = () => {
     if (!title.trim()) return;
@@ -19,13 +19,14 @@ export default function CreateTaskPage() {
   };
 
   return (
-    <div className="p-8 max-w-xl mx-auto">
+    <div className="p-4 sm:p-8 max-w-xl mx-auto">
       <TodoForm
         title={title}
-        status={status}
+        completed={status}
         setTitle={setTitle}
         setStatus={setStatus}
         onSubmit={handleAdd}
+        mode="create"
       />
     </div>
   );
