@@ -1,6 +1,49 @@
-# Task Manager - Gestionnaire de Tâches
+# Todo App
 
-Une application web intuitive pour créer, modifier, supprimer et organiser ses tâches efficacement.
+Une application de gestion de tâches moderne construite avec Next.js et Tailwind CSS.
+
+## Déploiement
+
+L'application est déployée sur Vercel et accessible à l'adresse suivante :
+[https://todo-list-nextjs-kappa.vercel.app/](https://todo-list-nextjs-kappa.vercel.app/)
+
+## Technologies utilisées
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- React Icons
+
+## Fonctionnalités
+
+- Création de tâches
+- Modification de tâches
+- Suppression de tâches
+- Suivi du statut des tâches
+- Interface responsive
+- Dashboard avec statistiques
+
+## Installation
+
+1. Clonez le repository
+```bash
+git clone https://github.com/1306BENIE/todo_list_nextjs.git
+
+cd todo_list_nextjs
+```
+
+2. Installez les dépendances
+```bash
+npm install
+```
+
+3. Lancez le serveur de développement
+```bash
+npm run dev
+```
+
+4. Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur
+
 
 ## Aperçu
 
@@ -20,26 +63,9 @@ Todo-App vous permet de :
 - [TailwindCSS](https://tailwindcss.com/) — Framework CSS pour un design rapide et moderne
 - `localStorage` — Pour la persistance des données côté client
 
-## Installation
-
-1. **Cloner le dépôt :**
-
-```bash
-git clone https://github.com/1306BENIE/todo_list_nextjs.git
-cd todo_list_nextjs
-```
-
-2. **Installer les dépendances :**
-
-npm install
-
-3. **Lancer le serveur de développement**
-
-npm run dev
-
 ## Remerciement
 
-Merci à **GoMyCode** et à **Maxence Yrowah** qui m’inspirent chaque jour dans cette aventure du développement web.
+Merci à **GoMyCode** et à monsieur **Maxence Yrowah** qui m'inspirent chaque jour dans cette aventure du développement web.
 
 ## Auteur
 
