@@ -26,6 +26,7 @@ L'application est déployée sur Vercel et accessible à l'adresse suivante :
 ## Installation
 
 1. Clonez le repository
+
 ```bash
 git clone https://github.com/1306BENIE/todo_list_nextjs.git
 
@@ -33,17 +34,18 @@ cd todo_list_nextjs
 ```
 
 2. Installez les dépendances
+
 ```bash
 npm install
 ```
 
 3. Lancez le serveur de développement
+
 ```bash
 npm run dev
 ```
 
 4. Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur
-
 
 ## Aperçu
 
