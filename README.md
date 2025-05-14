@@ -21,7 +21,7 @@ L'application est déployée sur Vercel et accessible à l'adresse suivante :
 - Suppression de tâches
 - Suivi du statut des tâches
 - Interface responsive
-- Dashboard avec statistiques
+- Dashboard avec statistique
 
 ## Installation
 
