@@ -5,6 +5,7 @@ Une application de gestion de tâches moderne construite avec Next.js et Tailwin
 ## Déploiement
 
 L'application est déployée sur Vercel et accessible à l'adresse suivante :
+
 [https://todo-list-nextjs-kappa.vercel.app/](https://todo-list-nextjs-kappa.vercel.app/)
 
 ## Technologies utilisées
