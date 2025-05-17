@@ -19,7 +19,7 @@ export default function CreateTaskPage() {
   };
 
   return (
-    <div className="p-4 sm:p-8 max-w-xl mx-auto">
+    <div className="max-w-xl w-full mx-auto">
       <TodoForm
         title={title}
         completed={status}

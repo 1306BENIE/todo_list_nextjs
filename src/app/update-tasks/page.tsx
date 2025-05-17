@@ -34,14 +34,16 @@ function UpdateTaskContent() {
   };
 
   return (
-    <TodoForm
-      title={title}
-      completed={status}
-      setTitle={setTitle}
-      setStatus={setStatus}
-      onSubmit={handleUpdate}
-      mode="edit"
-    />
+    <div className="max-w-xl w-full mx-auto">
+      <TodoForm
+        title={title}
+        completed={status}
+        setTitle={setTitle}
+        setStatus={setStatus}
+        onSubmit={handleUpdate}
+        mode="edit"
+      />
+    </div>
   );
 }
 
