@@ -17,32 +17,24 @@ export default function TasksPage() {
   }, []);
 
   return (
-    <div className="p-4 sm:p-8">
+    <div className="p-4 sm:p-8 pl-12 sm:pl-16 lg:pl-24">
       <TodoTitle title="Liste des Tâches" />
 
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 mb-4">
-        <button
-          onClick={() => router.push("/")}
-          className="w-full sm:w-auto bg-gray-200 text-gray-700 font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl 
-          shadow-[4px_4px_0_#aaa] hover:shadow-[2px_2px_0_#aaa] 
-          active:shadow-none active:translate-x-[2px] active:translate-y-[2px]
-          transition-all duration-200 ease-in-out text-sm sm:text-base"
-        >
-          Retour
-        </button>
-
+      <div className="flex justify-end mb-4">
         <button
           onClick={() => router.push("/create-tasks")}
-          className="w-full sm:w-auto bg-[#8fdccf] text-[#348bb1] font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl 
+          className="bg-[#8fdccf] text-[#fff] font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl 
           shadow-[4px_4px_0_#348bb1] hover:shadow-[2px_2px_0_#348bb1] 
           active:shadow-none active:translate-x-[2px] active:translate-y-[2px]
-          transition-all duration-200 ease-in-out text-sm sm:text-base"
+          transition-all duration-200 ease-in-out text-sm sm:text-base mr-4 sm:mr-6 lg:mr-12"
         >
           Créer une tâche
         </button>
       </div>
 
-      <TodoList todos={todos} />
+      <div className="w-full max-w-[1400px] -ml-4 sm:-ml-6 lg:-ml-12">
+        <TodoList todos={todos} />
+      </div>
     </div>
   );
 }
